@@ -2036,6 +2036,7 @@ wl_notify_connect_status(struct wl_cfg80211_priv *wl, struct net_device *ndev,
 	u32 event = EVENT_TYPE(e);
 	u16 flags = EVENT_FLAGS(e);
 	u32 status = EVENT_STATUS(e);
+	struct ieee80211_channel *channel;
 
 	WL_DBG(("\n"));
 
@@ -2071,7 +2072,9 @@ wl_notify_connect_status(struct wl_cfg80211_priv *wl, struct net_device *ndev,
 			wl_get_assoc_ies(wl);
 			memcpy(&wl->bssid, &e->addr, ETHER_ADDR_LEN);
 			wl_update_bss_info(wl);
-			cfg80211_ibss_joined(ndev, (u8 *)&wl->bssid, GFP_KERNEL);
+
+			channel = &wl->conf->channel;
+			cfg80211_ibss_joined(ndev, (u8 *)&wl->bssid, channel, GFP_KERNEL);
 			set_bit(WL_STATUS_CONNECTED, &wl->status);
 			wl->profile->active = true;
 		}
