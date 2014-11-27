@@ -103,6 +103,9 @@ endif
 
 EXTRA_CFLAGS :=
 
+#mtreece(2014-11-26) stupid date/time...
+EXTRA_CFLAGS := -Wno-date-time
+
 ifeq ($(APIFINAL),CFG80211)
   EXTRA_CFLAGS += -DUSE_CFG80211
   $(info Using CFG80211 API)
