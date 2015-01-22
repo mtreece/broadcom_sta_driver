@@ -2010,7 +2010,8 @@ static s32 wl_inform_single_bss(struct wl_cfg80211_priv *wl, struct wl_bss_info 
 
 	notify_ie = (u8 *)bi + le16_to_cpu(bi->ie_offset);
 	notify_ielen = le32_to_cpu(bi->ie_length);
-	cbss = cfg80211_inform_bss(wiphy, channel, (const u8 *)(bi->BSSID.octet),
+	cbss = cfg80211_inform_bss(wiphy, channel, CFG80211_BSS_FTYPE_UNKNOWN,
+	        (const u8 *)(bi->BSSID.octet),
 		0, beacon_proberesp->capab_info, beacon_proberesp->beacon_int,
 		(const u8 *)notify_ie, notify_ielen, signal, GFP_KERNEL);
 
