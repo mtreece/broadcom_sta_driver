@@ -150,3 +150,6 @@ clean:
 
 install:
 	install -D -m 755 wl.ko $(MDEST_DIR)
+
+install-hook:
+	bash -c "source ./install-source && post_install"
