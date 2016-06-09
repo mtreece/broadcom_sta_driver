@@ -1,0 +1,30 @@
+
+================================================================================
+                                    NOTICE
+================================================================================
+
+This personal fork was abandoned in favor of more-robust / upstream solutions.
+If you have any desire to see history or the original files housed by this
+repository, check out the branch, supported-before-linux-4.6.1-2-ARCH, or look
+backwards in history of master.
+
+I may pick this project back up in the future if it's ultimately found to be
+the lesser of all evils for broadcom support ;-).
+
+Final commit message on that branch with some more info:
+
+commit f13d8b7947e7178d0ebd86fbb85dc4f808ff146c
+Author: Michael T. Reece <mtreece@ncsu.edu>
+Date:   Thu Jun 9 01:01:32 2016 -0400
+
+    MARKER - support for circa linux-4.5.{something}
+    
+    This marks the baseline which worked for the ARCH linux version prior to
+    the linux-4.6.1-2-ARCH upgrade. (Without looking into the exact version,
+    I believe it was circa linux-4.5.{something}).
+    
+    This codebase is being abandoned in favor of more-robust / upstream
+    solutions.
+    
+    Users of this project may look into AUR-provided solutions, as one
+    possible alternative.
